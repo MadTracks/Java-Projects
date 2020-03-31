@@ -1,0 +1,69 @@
+class Triangle
+!!!135980.java!!!	Triangle()
+		tside=100;
+		theight=100;
+		tx=new int[3];
+		ty=new int[3];
+		tx[0]=tside/2;
+		ty[0]=0;
+		tx[1]=0;
+		ty[1]=tside;
+		tx[2]=tside;
+		ty[3]=tside;
+!!!136108.java!!!	Triangle(in side : int)
+		tside=side;
+		theight=side;
+		tx=new int[3];
+		ty=new int[3];
+		tx[0]=side/2;
+		ty[0]=0;
+		tx[1]=0;
+		ty[1]=side;
+		tx[2]=side;
+		ty[3]=side;
+!!!136236.java!!!	Triangle(in side : int, in x : int, in y : int)
+		tside=side;
+		theight=side;
+		tx=new int[3];
+		ty=new int[3];
+		
+		tx[0]=x+side/2;
+		ty[0]=y+0;
+		tx[1]=x+0;
+		ty[1]=y+side;
+		tx[2]=x+side;
+		ty[2]=y+side;
+!!!136364.java!!!	setTriangle(in side : int, inout x : int [[]], inout y : int [[]]) : void
+		tside=side;
+		theight=side;
+		for(int i=0; i<3; i++){
+			tx[i]=x[i];
+			ty[i]=y[i];
+		}
+!!!136492.java!!!	getTheight() : int
+		return theight;
+!!!136620.java!!!	getTside() : int
+		return tside;
+!!!136748.java!!!	gettx(in index : int) : int
+		return tx[index];
+!!!136876.java!!!	getty(in index : int) : int
+		return ty[index];
+!!!137004.java!!!	area() : double
+		return (theight*tside)/2.0;
+!!!137132.java!!!	perimeter() : double
+		return tside*3;
+!!!137260.java!!!	increment() : void
+		for(int i=0; i<3; i++){
+			tx[i]++;
+			ty[i]++;
+		}
+!!!137388.java!!!	decrement() : void
+		for(int i=0; i<3; i++){
+			tx[i]--;
+			ty[i]--;
+		}
+!!!137516.java!!!	compareTo(inout c1 : Shape) : int
+		return Double.compare(this.area(), c1.area());
+!!!137644.java!!!	draw(inout g : Graphics) : void
+		g.setColor(Color.RED);
+		g.fillPolygon(tx, ty, 3);

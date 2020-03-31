@@ -1,0 +1,57 @@
+class PolygonDyn
+!!!131372.java!!!	PolygonDyn()
+		px=new int[1];
+		py=new int[1];
+		px[0]=0;
+		py[0]=0;
+		psize=1;
+!!!131500.java!!!	PolygonDyn(inout x : int [[]], inout y : int [[]], in size : int)
+		px=new int[size];
+		py=new int[size];
+		for(int i=0; i<size; i++){
+			px[i]=x[i];
+			py[i]=y[i];
+		}
+		psize=size;
+!!!131628.java!!!	setPolygonDyn(inout x : int [[]], inout y : int [[]], in size : int) : void
+		px=new int[size];
+		py=new int[size];
+		for(int i=0; i<size; i++){
+			px[i]=x[i];
+			py[i]=y[i];
+		}
+		psize=size;
+!!!131756.java!!!	area() : double
+		double result=0.0;
+		int j;
+		j=psize-1;
+		for(int i=0; i<psize; i++){
+			result+=(px[j]+px[i])*(py[j]-py[i]);
+			j=i;
+		}
+		result=result/2.0;
+		return result;
+!!!131884.java!!!	perimeter() : double
+		double result=0.0;
+		int j;
+		j=psize-1;
+		for(int i=0; i<psize; i++){
+			result+=Math.sqrt((px[j]-px[i])*(px[j]-px[i])+(py[j]-py[i])*(py[j]-py[i]));
+			j=i;
+		}
+		return result;
+!!!132012.java!!!	increment() : void
+		for(int i=0; i<psize; i++){
+			px[i]++;
+			py[i]++;
+		}
+!!!132140.java!!!	decrement() : void
+		for(int i=0; i<psize; i++){
+			px[i]--;
+			py[i]--;
+		}
+!!!132268.java!!!	compareTo(inout c1 : Shape) : int
+		return Double.compare(this.area(), c1.area());
+!!!132396.java!!!	draw(inout g : Graphics) : void
+		g.setColor(Color.GREEN);
+		g.fillPolygon(px, py, psize);

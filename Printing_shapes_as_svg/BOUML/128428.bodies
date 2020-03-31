@@ -1,0 +1,42 @@
+class ComposedShape
+!!!130476.java!!!	ComposedShape()
+		Rectangle rect=new Rectangle(200,300,400,400);
+		Circle[] circ=new Circle[150];
+		int i,j,verticalsize;
+		verticalsize=0;
+		j=0;
+		
+		for(i=0; 20*i<rect.getRwidth(); i++){
+			for(j=0; 20*j<rect.getRheight(); j++){
+				circ[i*verticalsize+j]= new Circle(20,i*20+400,j*20+400);
+			}
+			verticalsize=j;
+		}
+		size=i*verticalsize+1;
+		shapes=new Shape[size];
+		shapes[0]=rect;
+		for(int k=0; k<size-1; k++){
+			shapes[k+1]=circ[k];
+		}
+!!!130604.java!!!	area() : double
+		return shapes[0].area()-((size-1)*shapes[1].area());
+!!!130732.java!!!	perimeter() : double
+		return shapes[0].perimeter()+((size-1)*shapes[1].perimeter());
+!!!130860.java!!!	increment() : void
+		for(int i=0; i<size; i++){
+			shapes[i].increment();
+		}
+!!!130988.java!!!	decrement() : void
+		for(int i=0; i<size; i++){
+			shapes[i].decrement();
+		}
+!!!131116.java!!!	compareTo(inout c1 : Shape) : int
+		return Double.compare(this.area(), c1.area());
+!!!131244.java!!!	draw(inout g : Graphics) : void
+		g.setColor(Color.MAGENTA);
+		shapes[0].draw(g);
+		g.setColor(Color.ORANGE);
+		for(int i=1; i<size; i++){
+			shapes[i].draw(g);
+		}
+		

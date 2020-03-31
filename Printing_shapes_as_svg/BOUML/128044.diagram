@@ -1,0 +1,85 @@
+format 221
+
+classcanvas 128044 class_ref 128044 // Circle
+  classdiagramsettings member_max_width 0 end
+  xyz 228.2 264.8 2000
+end
+classcanvas 128172 class_ref 128172 // Shape
+  classdiagramsettings member_max_width 0 end
+  xyz 348.2 38.8 2006
+end
+classcanvas 128428 class_ref 128428 // ComposedShape
+  classdiagramsettings member_max_width 0 end
+  xyz 81.4 269.9 2012
+end
+classcanvas 128812 class_ref 128556 // Polygon
+  classdiagramsettings member_max_width 0 end
+  xyz 465.3 265.85 2012
+end
+classcanvas 129068 class_ref 128684 // PolygonDyn
+  classdiagramsettings member_max_width 0 end
+  xyz 447.6 362.65 2018
+end
+classcanvas 129324 class_ref 128812 // PolygonVect
+  classdiagramsettings member_max_width 0 end
+  xyz 582.3 339.65 2018
+end
+classcanvas 129580 class_ref 128940 // Rectangle
+  classdiagramsettings member_max_width 0 end
+  xyz 341.2 263.55 2012
+end
+classcanvas 129836 class_ref 129068 // Shapemain
+  classdiagramsettings member_max_width 0 end
+  xyz 457 69.5 2017
+end
+classcanvas 129964 class_ref 129196 // ShapePanel
+  classdiagramsettings member_max_width 0 end
+  xyz 561 74.5 2011
+end
+relationcanvas 128300 relation_ref 128172 // <realization>
+  geometry VHV unfixed
+  from ref 128044 z 2007 to point 262 223
+  line 130604 z 2007 to point 380 223
+  line 130732 z 2007 to ref 128172
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 128556 relation_ref 128300 // <realization>
+  geometry VHV unfixed
+  from ref 128428 z 2013 to point 132 223
+  line 130092 z 2013 to point 380 223
+  line 130220 z 2013 to ref 128172
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 128684 relation_ref 128428 // <unidirectional association>
+  from ref 128428 z 2013 to point 40 341
+  line 130348 z 2013 to point 40 111
+  line 130476 z 2013 to ref 128172
+  role_a_pos 301 92 3000 no_role_b
+  multiplicity_a_pos 331 117 3000 no_multiplicity_b
+end
+relationcanvas 128940 relation_ref 128556 // <realization>
+  geometry VHV unfixed
+  from ref 128812 z 2013 to point 492 223
+  line 131116 z 2013 to point 380 223
+  line 131244 z 2013 to ref 128172
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 129196 relation_ref 128684 // <generalisation>
+  from ref 129068 z 2019 to ref 128812
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 129452 relation_ref 128812 // <generalisation>
+  from ref 129324 z 2019 to ref 128812
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 129708 relation_ref 128940 // <realization>
+  from ref 129580 z 2013 to ref 128172
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+end

@@ -1,0 +1,13 @@
+window_sizes 1800 910 450 1345 758 104
+
+diagrams
+  active  classdiagram_ref 128044 // view
+    1345 758 100 B 13 0
+end
+show_stereotypes
+selected classrelation_ref 128428 // shapes (<unidirectional association>)
+open
+  class_ref 128428 // ComposedShape
+  deploymentview_ref 128044 // src
+end
+end

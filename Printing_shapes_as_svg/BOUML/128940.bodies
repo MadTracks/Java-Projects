@@ -1,0 +1,45 @@
+class Rectangle
+!!!133676.java!!!	Rectangle()
+		rheight=100;
+		rwidth=100;
+		rx=0;
+		ry=0;
+		
+!!!133804.java!!!	Rectangle(in height : int, in width : int)
+		rheight=height;
+		rwidth=width;
+		rx=0;
+		ry=0;
+!!!133932.java!!!	Rectangle(in height : int, in width : int, in x : int, in y : int)
+		rheight=height;
+		rwidth=width;
+		rx=x;
+		ry=y;
+!!!134060.java!!!	setRectangle(in height : int, in width : int, in x : int, in y : int) : void
+		rheight=height;
+		rwidth=width;
+		rx=x;
+		ry=y;
+!!!134188.java!!!	getRheight() : int
+		return rheight;
+!!!134316.java!!!	getRwidth() : int
+		return rwidth;
+!!!134444.java!!!	getrx() : int
+		return rx;
+!!!134572.java!!!	getry() : int
+		return ry;
+!!!134700.java!!!	area() : double
+		return rheight*rwidth;
+!!!134828.java!!!	perimeter() : double
+		return 2*(rheight+rwidth);
+!!!134956.java!!!	increment() : void
+		rx++;
+		ry++;
+!!!135084.java!!!	decrement() : void
+		rx--;
+		ry--;
+!!!135212.java!!!	compareTo(inout c1 : Shape) : int
+		return Double.compare(this.area(), c1.area());
+!!!135340.java!!!	draw(inout g : Graphics) : void
+		g.setColor(Color.BLUE);
+		g.fillRect(rx, ry, rwidth, rheight);

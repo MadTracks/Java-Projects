@@ -1,0 +1,40 @@
+class Circle
+!!!128812.java!!!	Circle()
+		cradius=100;
+		cx=0;
+		cy=0;
+		
+!!!128940.java!!!	Circle(in radius : int)
+		cradius=radius;
+		cx=0;
+		cy=0;
+!!!129068.java!!!	Circle(in radius : int, in x : int, in y : int)
+		cradius=radius;
+		cx=x;
+		cy=y;
+!!!129196.java!!!	setCircle(in radius : int, in x : int, in y : int) : void
+		cradius=radius;
+		cx=x;
+		cy=y;
+!!!129324.java!!!	getCradius() : int
+		return cradius;
+!!!129452.java!!!	getcx() : int
+		return cx;
+!!!129580.java!!!	getcy() : int
+		return cy;
+!!!129708.java!!!	area() : double
+		return Math.PI*cradius*cradius;
+!!!129836.java!!!	perimeter() : double
+		return 2*Math.PI*cradius;
+!!!129964.java!!!	increment() : void
+		cx++;
+		cy++;
+!!!130092.java!!!	decrement() : void
+		cx--;
+		cy--;
+!!!130220.java!!!	compareTo(inout c1 : Shape) : int
+		return Double.compare(this.area(), c1.area());
+!!!130348.java!!!	draw(inout g : Graphics) : void
+		g.setColor(Color.CYAN);
+		g.fillOval(cx, cy, cradius, cradius);
+

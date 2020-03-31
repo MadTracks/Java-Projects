@@ -1,0 +1,26 @@
+class Shapemain
+!!!135468.java!!!	drawAll(inout all_shapes : Shape [[]], in size : int, inout g : Graphics) : void
+		for(int i=0;i<size;i++){
+			all_shapes[i].draw(g);
+		}
+!!!135596.java!!!	sortShapes(inout all_shapes : Shape [[]], in size : int) : void
+		Shape temp;
+		for(int i=0; i<size; i++){
+			for(int j=i; j<size; j++){
+				if(all_shapes[i].area()>all_shapes[j].area()){
+					temp=all_shapes[i];
+					all_shapes[i]=all_shapes[j];
+					all_shapes[j]=temp;
+				}
+			}
+		}
+!!!135724.java!!!	main(inout args : String [[]]) : void
+		
+		ShapePanel myshapesPanel = new ShapePanel();
+		JFrame myframe= new JFrame("HW07");
+		myshapesPanel.setBackground(Color.BLACK);
+		myframe.setSize(new Dimension(1000,800));
+		myframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		myframe.add(myshapesPanel);
+		myframe.setVisible(true);
+		

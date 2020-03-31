@@ -1,0 +1,61 @@
+class PolygonVect
+!!!132524.java!!!	PolygonVect()
+		px=new ArrayList<Integer>(1);
+		py=new ArrayList<Integer>(1);
+		psize=1;
+!!!132652.java!!!	PolygonVect(inout x : int [[]], inout y : int [[]], in size : int)
+		px=new ArrayList<Integer>(size);
+		py=new ArrayList<Integer>(size);
+		for(int i=0; i<size; i++){
+			px.add(x[i]);
+			py.add(y[i]);
+		}
+		psize=size;
+!!!132780.java!!!	setPolygonVect(inout x : int [[]], inout y : int [[]], in size : int) : void
+		px=new ArrayList<Integer>(size);
+		py=new ArrayList<Integer>(size);
+		for(int i=0; i<size; i++){
+			px.add(x[i]);
+			py.add(y[i]);
+		}
+		psize=size;
+!!!132908.java!!!	area() : double
+		double result=0.0;
+		int j;
+		j=psize-1;
+		for(int i=0; i<psize; i++){
+			result+=(px.get(j)+px.get(i))*(py.get(j)-py.get(i));
+			j=i;
+		}
+		result=result/2.0;
+		return result;
+!!!133036.java!!!	perimeter() : double
+		double result=0.0;
+		int j;
+		j=psize-1;
+		for(int i=0; i<psize; i++){
+			result+=Math.sqrt((px.get(j)-px.get(i))*(px.get(j)-px.get(i))+(py.get(j)-py.get(i))*(py.get(j)-py.get(i)));
+			j=i;
+		}
+		return result;
+!!!133164.java!!!	increment() : void
+		for(int i=0; i<psize; i++){
+			px.set(i,px.get(i)+1);
+			py.set(i,py.get(i)+1);
+		}
+!!!133292.java!!!	decrement() : void
+		for(int i=0; i<psize; i++){
+			px.set(i,px.get(i)-1);
+			py.set(i,py.get(i)-1);
+		}
+
+!!!133420.java!!!	compareTo(inout c1 : Shape) : int
+		return Double.compare(this.area(), c1.area());
+!!!133548.java!!!	draw(inout g : Graphics) : void
+		g.setColor(Color.YELLOW);
+		int j;
+		j=psize-1;
+		for(int i=0; i<psize; i++){
+			g.drawLine(px.get(j), py.get(j),px.get(i) ,py.get(i));
+			j=i;
+		}
